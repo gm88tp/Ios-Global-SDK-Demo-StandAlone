@@ -41,7 +41,7 @@
 
 **1、在工程的 Build Setting 中找到 Other Linker Flags 添加  -ObjC**
 
-![p1](docs/assets/images/p1.png)
+![p1](assets/images/p1.png)
 
 **2、在工程的 Build Setting 中找到 Enable Bitcode  设置成NO**
 
