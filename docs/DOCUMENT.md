@@ -1,7 +1,5 @@
 # 怪猫海外SDK IOS 使用文档
 
-[TOC]
-
 # 环境要求
 
 > - Mac OS X 10.10以上版本
@@ -43,11 +41,11 @@
 
 **1、在工程的 Build Setting 中找到 Other Linker Flags 添加  -ObjC**
 
-![p1](/Users/rosehyird/Documents/iOS-work/IOS-SDK-H5-Global/docs/p/p1.png)
+![p1](docs/assets/images/p1.png)
 
 **2、在工程的 Build Setting 中找到 Enable Bitcode  设置成NO**
 
-![p2](/Users/rosehyird/Documents/iOS-work/IOS-SDK-H5-Global/docs/p/p2.png)
+![p2](assets/images/p2.png)
 
 **3、由于iOS 9 改为https，如果您的项目有使用http，可在Info.plist中添加如下代码：**（右键Info.plist用source code打开）
 
@@ -59,9 +57,9 @@
 
 **4、如有游戏需要推送，请开启推送Capabilities中打开Background Modes（勾选Remote notifications）和Push Notifications**如下图所示：
 
-![p3](p/p3.png)
+![p3](assets/images/p3.png)
 
-![p4](p/p4.png)
+![p4](assets/images/p4.png)
 
 **5、Info.plist文件配置，此配置项是为了Facebook、Twitter、Google、Applovin**
 
