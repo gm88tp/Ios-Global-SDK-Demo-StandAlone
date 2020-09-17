@@ -1,4 +1,4 @@
-# 怪猫海外SDK IOS 使用文档
+# Gm88海外SDK IOS 使用文档
 
 # 环境要求
 
@@ -6,7 +6,7 @@
 > - Xcode 7.0以上版本
 > - iOS 9.0以上版本
 
-- 怪猫SDK集成了登录，支付等功能。本文档详细说明相关功能在技术对接与使用过程中需要注意的地方，以便贵方能快速对接。阅读后如有疑问，请联系怪猫游戏相关技术支持。
+- Gm88的SDK集成了登录，支付等功能。本文档详细说明相关功能在技术对接与使用过程中需要注意的地方，以便贵方能快速对接。阅读后如有疑问，请联系Gm88游戏相关技术支持。
 - SDK目前支持语言有：简体中文，繁体中文，繁体中文（台湾），繁体中文（香港），英语，西班牙语，德语，法语，印度尼西亚语，越南语，韩语，日语，意大利语，马来语，葡萄牙语，俄语，泰语
 
 # 准备工作
@@ -14,7 +14,7 @@
 ## 导入SDK
 
 ```
-将怪猫(给到的SDK).framework、(根据给到SDK添加).bundle导入到您的工程中。
+将(给到的SDK).framework、(根据给到SDK添加).bundle导入到您的工程中。
 ```
 
 操作：
@@ -23,7 +23,7 @@
 
 方式二：直接将上述文件拖入Xcode工程目录结构中，在弹出的界面中勾选**Copy items into destination group's folder(if needed)**，并确保**Add To Targets勾选相应target**。
 
-**在General—Frameworks,Libraries,and Embedded Content中，将怪猫给到的framework设置成Embed & Sign**
+**在General—Frameworks,Libraries,and Embedded Content中，将Gm88给到的framework设置成Embed & Sign**
 
 ## 添加GoogleService-Info.plist
 
@@ -234,7 +234,7 @@
 
 ## 定义代理
 
-怪猫SDK使用统一的代理方法来获得各接口的响应，涉及的接口包括：
+Gm88的SDK使用统一的代理方法来获得各接口的响应，涉及的接口包括：
 
 - 登陆
 - 登出
@@ -270,7 +270,7 @@
 
 ## 定义通知
 
-怪猫SDK使用通知来接收部分接口的结果，涉及的接口包括：
+Gm88的SDK使用通知来接收部分接口的结果，涉及的接口包括：
 
 - 分享
 - 变现广告
@@ -411,7 +411,7 @@
 | zoneID       | string | 是       | 服务器ID，若无，请填写“1”                                    |
 | zoneName     | string | 否       | 服务器名称                                                   |
 | text         | string | 否       | 文本                                                         |
-| notifyURL    | string | 否       | 回调地址，可传可不传，不传会使用怪猫后台配置的回调地址，请将地址提供给怪猫运营 |
+| notifyURL    | string | 否       | 回调地址，可传可不传，不传会使用Gm88后台配置的回调地址，请将地址提供给Gm88运营 |
 
 **示例代码**
 
