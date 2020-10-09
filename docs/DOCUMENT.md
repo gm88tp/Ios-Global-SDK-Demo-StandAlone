@@ -196,15 +196,7 @@
 
 ```objc
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-    [wfnjiPlat 
-         initSDK : [wfnjiPlat getInfoString:@"gameid"] 
-         setPromote : [wfnjiPlat getInfoString:@"Promote"]
-         application : application
-         didFinishLaunchingWithOptions : launchOptions
-         appsFlyerDevKey : [wfnjiPlat getInfoString:@"appsFlyerDevKey"]
-         appleAppID : [wfnjiPlat getInfoString:@"appleAppID"]
-         GGkClientID : [wfnjiPlat getInfoString:@"GGkClientID"]
-         Applede:self];
+    [wfnjiPlat initSDKapplication:application didFinishLaunchingWithOptions:launchOptions Applede:self];
     return YES;
 }
 ```
