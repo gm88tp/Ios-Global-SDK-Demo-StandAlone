@@ -7,13 +7,13 @@
 	<key>channel</key>
 	<string>GM</string>
 	<key>gameid</key>
-	<string>1718</string>
+	<string>1634</string>
 	<key>GGkClientID</key>
 	<string>418326854110-60hojn32qggeonm0mclrvi0fpaorlmol.apps.googleusercontent.com</string>
 	<key>appsFlyerDevKey</key>
 	<string>g7ZP9TqQ4S8AF9zeQD9Koe</string>
 	<key>appleAppID</key>
-	<string>1505726219</string>
+	<string>1475870720</string>
 	<key>Promote</key>
 	<string>17</string>
 	<key>rolelevel</key>
@@ -21,8 +21,10 @@
 	<key>facebookADID</key>
 	<string>914481655658575_914484725658268</string>
 	<key>GoogleADID</key>
-	<string>ca-app-pub-7496069579613989~9127239039</string>
+	<string>ca-app-pub-7496069579613989~9003527017</string>
 	<key>IronsourceAppKey</key>
-	<string>c1d59a25</string>
+	<string>ce0a7e2d</string>
+	<key>issueVersion</key>
+	<string>1634011</string>
 </dict>
 </plist>
