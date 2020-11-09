@@ -681,19 +681,21 @@ mPayInfo.notifyURL = @"http://demo.wfnji88.com/ok.php?gameid=1156&promote=2";
  游戏等级：level
  区服:   serverID
  状态值默认选择<3>:status 1:创建角色 2:完成新手引导 3:等级升级 4：进入游戏
+ 游戏内角色vip等级：vipLevel (如果游戏没有此参数，可以传空)
  */
 + (void)wfnjiRoleName:(NSString *)name
             gameLevel:(NSString *)level
              serverID:(NSString *)serverID
                roleID:(NSString *)roleID
-               status:(NSString *)status;
+               status:(NSString *)status
+             vipLevel:(NSString *)vipLevel;
 
 ```
 
 **示例**
 
 ```objc
-[wfnjiPlat wfnjiRoleName:@"a" gameLevel:@"1" serverID:@"1" roleID:@"1" status:@"2"];
+[wfnjiPlat wfnjiRoleName:@"a" gameLevel:@"1" serverID:@"1" roleID:@"1" status:@"2" vipLevel:@""];
 
 ```
 

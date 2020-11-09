@@ -7,7 +7,7 @@
 	<key>channel</key>
 	<string>GM</string>
 	<key>gameid</key>
-	<string>1634</string>
+	<string>1696</string>
 	<key>GGkClientID</key>
 	<string>418326854110-60hojn32qggeonm0mclrvi0fpaorlmol.apps.googleusercontent.com</string>
 	<key>appsFlyerDevKey</key>
@@ -25,6 +25,6 @@
 	<key>IronsourceAppKey</key>
 	<string>ce0a7e2d</string>
 	<key>issueVersion</key>
-	<string>1634011</string>
+	<string></string>
 </dict>
 </plist>

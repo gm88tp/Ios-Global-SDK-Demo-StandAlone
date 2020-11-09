@@ -173,12 +173,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
  游戏等级：level
  区服:   serverID
  状态值默认选择<3>:status 1:创建角色 2:完成新手引导 3:等级升级 4：进入游戏
+ 游戏内角色vip等级：vipLevel
  */
 + (void)wfnjiRoleName:(NSString *)name
             gameLevel:(NSString *)level
              serverID:(NSString *)serverID
                roleID:(NSString *)roleID
-               status:(NSString *)status;
+               status:(NSString *)status
+             vipLevel:(NSString *)vipLevel;
 
  
 ///**
