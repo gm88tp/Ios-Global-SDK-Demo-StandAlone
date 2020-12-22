@@ -36,6 +36,7 @@
  
  */
 +(void)applicationDidEnterBackground:(UIApplication *)application ;
+
 /*
  
  要针对所有广告系列（包括使用通用链接的广告系列）将应用内事件作为转化衡量，
@@ -82,14 +83,15 @@ gameid 游戏的id
  promote 渠道
  
  */
-+ (void) initSDK:(NSString*)gameid
+/* 废弃
+ + (void) initSDK:(NSString*)gameid
       setPromote:(NSString*)promote
      application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
  appsFlyerDevKey:(NSString *)devKey
       appleAppID:(NSString *)appID
      GGkClientID:(NSString *)kClientID
-         Applede:(id) app  ;
+         Applede:(id) app  ;*/
 
 /**
  必须最先接入的方法  平台初始化方法
@@ -157,23 +159,20 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 + (void) quit;
 
 /**
- 获取当前 SDK 的号
+ 获取当前 SDK 的版本号
  
- @return SDK 号，
+ @return SDK 版本号，
  */
 +(NSString*)versions;
-///*
-// 获取当前游戏用户注册或新手引导  =======废弃======
-// */
-//+(void)wfnjicreateTheRoleOrCompleteNewbieGuide:(selectStyle)selectStyle;
+
 /**
  
  获取当前游戏的角色
- 角色名字：name
- 游戏等级：level
- 区服:   serverID
- 状态值默认选择<3>:status 1:创建角色 2:完成新手引导 3:等级升级 4：进入游戏
- 游戏内角色vip等级：vipLevel
+ @param name     角色名字
+ @param level    游戏等级
+ @param serverID 区服
+ @param status 状态值默认选择<3>: 1:创建角色 2:完成新手引导 3:等级升级 4：进入游戏
+ @param vipLevel 游戏内角色vip等级
  */
 + (void)wfnjiRoleName:(NSString *)name
             gameLevel:(NSString *)level
@@ -183,50 +182,43 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
              vipLevel:(NSString *)vipLevel;
 
  
-///**
-//c创建角色页面
-// */
-//+ (void)createRole;
-///**
-// 进入游戏主页面
-// */
-//+ (void)showGamePage;
-//
-///**
-//选择屈服页面
-// 关闭
-// */
-//+ (void)selectArea;
 
-//获取多语言
 
+/**
+ 获取多语言
+ 调用此接口可以直接获取SDK资源文件中的多语言
+ @param str 多语言文件中的key
+ @return 该key的多语言文案
+ */
 + (NSString *)setlaugulgString:(NSString *)str;
 
 
-// 获取配置信息
+/**
+ 获取配置信息
+ @param str  传入infoset.plist中的参数key
+ @return 该参数的值
+ */
 + (NSString*)getInfoString:(NSString*)str;
 
 
 /*
  注册Google广告测试设备
  */
-
 +(void)regisetAdGoogleDevice:(NSArray*)arr;
+
 
 /*
 加载等待loading页面
 style 1 至 5
  */
-
 + (void)setLoadingImg:(UIImage *)image
                 Color:(UIColor *)color
          loadingStyle:(NSInteger )style
               imgRect:(CGRect)rec;
+
 /*
 移除loading页面
- 
  */
-
 + (void)removeLoadingImg;
 
 
@@ -238,7 +230,11 @@ style 1 至 5
 
 + (void)removeCheckoutVU;
 
-//公开的打点数据方法
+/**
+ 数据打点方法
+ @param eventName 事件名称
+ @param info      参数，没有可传空
+ */
 + (void)LogInfo:(NSString *)eventName EventDic:(NSDictionary *)info;
 
 
@@ -259,18 +255,22 @@ style 1 至 5
                    shareCode :(NSString *)share_code;
 
 
-//返回渠道号
+/**
+ 返回渠道号
+ */
 + (NSString *)returnChannelID;
 
 
 /**
  调用广告
- type：0：激励广告；1：插页广告；2：横幅广告
+ @param type 0：激励广告；1：插页广告；2：横幅广告
  */
 + (void)choseADPlatForm:(NSInteger)type;
 
 
-//显示评价
+/**
+ 显示评价
+ */
 + (void)showMarkView;
 
 
@@ -308,54 +308,106 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken ;
 + (void)application:(UIApplication *)application  didReceiveRemoteNotification:(NSDictionary *)userInfo;
 
 
-//弹出文字
-
+/**
+ 弹出文字
+ @param text 需要弹出的文案
+ */
 + (void)toastInfo:(NSString *)text ;
 
 
-+ (void) toastFacebook:(NSString * )info;
-
-
-+ (void) toastbahamute:(NSString * )info;
-
-+ (void) toastplatformCode:(NSString *)code Info:(NSString *)info  pageID:(NSString *)pageid;
-
-// 返回设备号
+/**
+ 返回设备号
+ */
 + (NSString *) returnIDFV;
 
-// 返回广告ID
+/**
+ 返回广告ID
+ */
 + (NSString *) returnIDFA;
 
 
 + (NSString *)returnIDFVNomal;
 
-// 返回时区
+/**
+ 返回时区
+ */
 + (NSString *)returnTimeZome ;
-// 返回语言码
+
+/**
+ 返回语言码
+ */
 + (NSString *)returnLanguageCode;
 
+/**
+ 翻译
+ @param text 需要翻译的文案
+ @param identifier 文本标识符（透传字段）
+ */
 + (void)translateText:(NSString *)text identifier:(NSString *)identifier;
 
+/**
+ 返回当前的window
+ */
 + (UIWindow *)currentWindow;
 
-//跳转：1：商店；2：三方平台+浏览器
+/**
+ 打开社交平台方法一
+ @param code 2 Facebook,3 lobi,4 应用商店
+ @param info 链接地址/包名/应用ID (无参数默认给个空字符)
+ @param pageid 粉丝页ID(无参数默认给个空字符)
+ */
++ (void) toastplatformCode:(NSString *)code Info:(NSString *)info  pageID:(NSString *)pageid;
+
+/**
+ 打开社交平台方法二
+ @param type 1：评价商店；2：三方平台+浏览器
+ */
 + (void)showMarkViewType:(NSInteger)type;
 
-//次数
+
+/**
+ 广告剩余显示次数
+ @param str 次数，没有限制可不用调用此方法
+ */
 + (void)ADCounts:(NSString *)str;
 
-//客服入口
+/**
+ 客服入口
+ */
 + (void)showCustomView;
 
+/**
+ 获取内购列表
+ */
 + (void)setPurchaseInfo;
 
+/**
+ 支付
+ @param payInfo 支付信息（wfnjiOrderModel类型对象）
+ @param callBack 回调，设置代理
+ */
 + (void) wfnjipay:(wfnjiOrderModel *)payInfo CallBack:(id<wfnjiPayCallBack>) callBack;
 
-//vip客服
+/**
+ vip客服
+ */
 + (void)VIPCustomService;
 
-//是否vip
+/**
+ 是否可以显示vip
+ */
 + (void)isCanVip;
+
+/**
+ 常见问题入口
+ */
++ (void)showFAQView;
+
+/**
+ 打开入口
+ @param str 链接
+ */
++ (void)showViewWithStr:(NSString *)str;
 
 @end
 

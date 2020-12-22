@@ -172,12 +172,18 @@
         //此接口用于显示vip客服，会返回相关结果在通知中返回（可显示，不可显示，显示成功用户关闭）
         [wfnjiPlat VIPCustomService];
     }];
+    UIAlertAction *faq = [UIAlertAction actionWithTitle:@"常见问题" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //此接口用于显示vip客服，会返回相关结果在通知中返回（可显示，不可显示，显示成功用户关闭）
+        [wfnjiPlat showFAQView];
+    }];
+    
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
     }];
     [alert addAction:custom];
     [alert addAction:canVip];
     [alert addAction:vipCust];
+    [alert addAction:faq];
     [alert addAction:cancel];
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -194,22 +200,22 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"上报角色打点" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *ad1 = [UIAlertAction actionWithTitle:@"新手引导" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //新手引导
-        [wfnjiPlat wfnjiRoleName:@"a" gameLevel:@"1" serverID:@"1" roleID:@"1" status:@"2"];
+        [wfnjiPlat wfnjiRoleName:@"a" gameLevel:@"1" serverID:@"1" roleID:@"1" status:@"2" vipLevel:@""];
     }];
         
     UIAlertAction *ad2 = [UIAlertAction actionWithTitle:@"角色等级" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //角色等级
-        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"3"];
+        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"3" vipLevel:@""];
     }];
     
     UIAlertAction *ad3 = [UIAlertAction actionWithTitle:@"创建角色" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //创建角色
-        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"1"];
+        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"1" vipLevel:@""];
     }];
     
     UIAlertAction *ad4 = [UIAlertAction actionWithTitle:@"进入游戏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //进入游戏
-        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"4"];
+        [wfnjiPlat wfnjiRoleName:@"b" gameLevel:@"" serverID:@"1" roleID:@"2" status:@"4" vipLevel:@""];
     }];
 
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -277,6 +283,9 @@
         //此接口是弹出相应文字,将获取手机所在时区弹出做示例
         [wfnjiPlat toastInfo:str];
     }];
+    UIAlertAction *openurl = [UIAlertAction actionWithTitle:@"打开webview" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [wfnjiPlat showViewWithStr:@"https://www.baidu.com"];
+    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
     }];
@@ -284,6 +293,7 @@
     [alert addAction:canVip];
     [alert addAction:vipCust];
     [alert addAction:cancel];
+    [alert addAction:openurl];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
