@@ -192,7 +192,7 @@ Gm88的SDK使用统一的代理方法来获得各接口的响应，涉及的接�
 **定义**
 
 ```objc
--(void)onFinish:(GMStatus)code   Data:(NSDictionary*)Data
+-(void)onFinish:(wfnjiStatus)code   Data:(NSDictionary*)Data
 {
     NSLog(@"回调状态值：%ld",(long)code);
     NSLog(@"回调：%@",Data);
@@ -316,7 +316,7 @@ Gm88的SDK使用通知来接收部分接口的结果，涉及的接口包括：
 **示例**
 
 ```objc
-[wfnjiPlatlogOut];
+[wfnjiPlat logOut];
 ```
 
 **回调**
