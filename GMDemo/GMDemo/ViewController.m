@@ -130,12 +130,39 @@
     
 }
 - (IBAction)share:(id)sender {
+    //分享有两种接入方式，如下所示，可以按需接入
+    //分享方法1：此方法cp接入ShareInfoName和ShareInfoID必须和我们后台配置相符合
     [wfnjiPlat ShareInfoName:@"请传入分享信息"
                  ShareInfoID:@"分享id"
                   shareUname:@"角色名称"
                  shareServer:@"角色区服"
                    shareCode:@"角色code"
      ];
+    
+    //分享方法2：
+    /**
+     分享使用的方法
+     
+     @param text 分享文本
+     @param image 图片列表，可以传空，传一张
+     @param link 分享链接
+     @param type 分享类型：1 引文分享（链接），2 图片分享,3 使用SDK后台配置分享
+     @param info SDK后台配置分享，需要传入参数格式如下：
+                @{@"shareName":@"分享名称",
+                    @"shareID":@"分享ID",
+                 @"shareUName":@"角色名",
+                @"shareServer":@"角色区服",
+                  @"shareCode":@"角色code"
+     
+                 }
+     */
+    
+    //示例：图片分享
+    [wfnjiPlat shareInfo:@"请输入需要分享文案"
+                   image:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20180210%2F23%2F1518276333-RXexUJcntC.jpg&refer=http%3A%2F%2Fimage.biaobaiju.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1614306450&t=e1c9d6c5223192f3f335c377048882bf"]] ]
+                    link:@"此处示例图片分享，链接可以传空"
+                    type:@"2"
+               otherInfo:@{}];
 }
 - (IBAction)ad:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"广告" message:@"请选择广告类型" preferredStyle:UIAlertControllerStyleActionSheet];
